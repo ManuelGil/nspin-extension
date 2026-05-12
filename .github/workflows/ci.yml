@@ -59,7 +59,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --prefer-offline
 
       - name: Run validation pipeline
         run: pnpm run validate
