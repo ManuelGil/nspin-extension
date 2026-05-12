@@ -82,8 +82,11 @@
 		"ts-check": "tsc --noEmit",
 		"check-exports": "attw --pack",
 		"validate": "pnpm run check && pnpm run ts-check && pnpm run test && pnpm run build && pnpm run check-exports",
+		"pack:check": "pnpm pack",
+		"release": "release-it",
+		"prepare": "pnpm exec husky",
 		"prepublishOnly": "pnpm run validate && cp README.npm.md README.md",
-		"prepare": "pnpm exec husky"
+		"postpublish": "git checkout -- README.md"
 	},
 	"dependencies": {
 		"nspin": "^1.8.0"
